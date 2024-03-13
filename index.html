@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=0.8">
+  <link rel="icon" type="image/x-icon" href="./data/favicon48.png">
+  <title>Minerva UI Test</title>
+  <style>
+    html, body {
+      background-color: black;
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+  <script async src="https://ga.jspm.io/npm:es-module-shims@1.7.2/dist/es-module-shims.js"></script>
+  <script type="importmap-shim">
+  {
+    "imports": {
+      "global-css": "./src/global.css",
+      "panel-grid-css": "./src/panel-grid/panel-grid.css",
+      "icon-button-css": "./src/panel-grid/icon-button.css",
+      "panel-css": "./src/panel/panel.css",
+      "collapse-css": "./src/panel/collapse.css",
+      "nav-css": "./src/nav/nav.css",
+      "elements": "./src/lib/elements.js",
+      "element-state": "./src/lib/element-state.js",
+      "element-template": "./src/lib/element-template.js",
+      "nav-config": "./src/config/nav-config.js",
+      "index": "./src/index.js",
+      "nav": "./src/nav/nav.js",
+      "panel": "./src/panel/panel.js",
+      "panel-grid": "./src/panel-grid/panel-grid.js",
+      "@arrow-js/core": "https://cdn.jsdelivr.net/npm/@arrow-js/core@1.0.0-alpha.9/dist/index.mjs",
+      "a11y-collapse": "https://cdn.jsdelivr.net/npm/@lrnwebcomponents/a11y-collapse@8.0.2/src/a11y-collapse.js",
+       "@lit/reactive-element": "https://ga.jspm.io/npm:@lit/reactive-element@2.0.4/development/reactive-element.js",
+      "simple-icon-button-lite": "https://cdn.jsdelivr.net/npm/@lrnwebcomponents/simple-icon@8.0.2/lib/simple-icon-button-lite.js"
+    },
+    "scopes": {
+      "https://cdn.jsdelivr.net/": {
+        "@lrnwebcomponents/simple-icon/lib/simple-iconset.js": "https://cdn.jsdelivr.net/npm/@lrnwebcomponents/simple-icon@8.0.2/lib/simple-iconset.js",
+        "@lrnwebcomponents/simple-icon/lib/simple-icon-lite.js": "https://cdn.jsdelivr.net/npm/@lrnwebcomponents/simple-icon@8.0.2/lib/simple-icon-lite.js",
+        "@lrnwebcomponents/simple-icon/lib/simple-icon-button-lite.js": "https://cdn.jsdelivr.net/npm/@lrnwebcomponents/simple-icon@8.0.2/lib/simple-icon-button-lite.js",
+        "@lrnwebcomponents/simple-icon/lib/simple-icons.js": "https://cdn.jsdelivr.net/npm/@lrnwebcomponents/simple-icon@8.0.2/lib/simple-icons.js",
+        "@lit/reactive-element": "https://cdn.jsdelivr.net/npm/@lit/reactive-element@2.0.4/development/reactive-element.js",
+        "@lrnwebcomponents/simple-tooltip/simple-tooltip.js": "https://cdn.jsdelivr.net/npm/@lrnwebcomponents/simple-tooltip@8.0.2/simple-tooltip.js",
+        "lit": "https://cdn.jsdelivr.net/npm/lit@3.1.4/index.js",
+        "lit-element/lit-element.js": "https://cdn.jsdelivr.net/npm/lit-element@4.0.6/development/lit-element.js",
+        "lit-html": "https://cdn.jsdelivr.net/npm/lit-html@3.1.4/development/lit-html.js",
+        "lit-html/is-server.js": "https://cdn.jsdelivr.net/npm/lit-html@3.1.4/development/is-server.js"
+      },
+      "https://ga.jspm.io/": {
+      } 
+    }
+  }
+  </script>
+  <script type="module-shim">
+    import main from 'index';
+    main('minerva');
+  </script>
+</body>

@@ -1,0 +1,35 @@
+.grid.wrapper {
+  gap: var(--gap-tiny);
+  font-size: var(--menu-font-size);
+  & > div.grid {
+    grid-template-columns: repeat(auto-fill, 100px);
+  }
+  & > div.grid.tabs {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  }
+  & > div.grid > div.grid {
+    grid-template-columns: auto 1fr auto;
+  }
+  & > div.grid > div.grid > div {
+    background-color: var(--dark-main-glass);
+  }
+  & > div.grid > div.grid.chosen > div {
+    color: var(--light-focus-color);
+    box-shadow: var(--white-highlight);
+    text-shadow: var(--dark-focus-shadow);
+    background-color: var(--main-color-glass);
+  }
+  & > div.grid.tabs > div.grid::before,
+  & > div.grid.tabs > div.grid::after {
+    box-shadow: var(--thin-white-shadow);
+  }
+  & > div.grid > div.grid::before,
+  & > div.grid > div.grid::after {
+    width: var(--gap-tiny);
+    content: '';
+  }
+  & > div.grid > div.grid:first-child::before,
+  & > div.grid > div.grid:last-child::after {
+    width: 0;
+  }
+}

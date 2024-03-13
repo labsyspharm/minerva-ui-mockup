@@ -1,0 +1,26 @@
+:host {
+  backdrop-filter: var(--glass-filter);
+  background-color: var(--gray-glass);
+  transition: transform 0.5s ease 0s;
+  border: var(--thin-glass-border);
+  padding-top: var(--gap-small);
+  border-radius: 0 0 20px 0;
+  width: 30em;
+  .wrapper {
+    grid-template-rows: 0px auto 1fr;
+    pointer-events: all;
+    padding: 0 8px 8px 0;
+    panel-minerva.grid {
+      border-radius: 0 0 12px 0;
+      background: var(--main-color-glass);
+      align-self: stretch;
+      border-top: none;
+    }
+  }
+}
+:host(:not([expanded='true'])) {
+  transform: translate(-27em, 0);
+  .wrapper {
+    transform: translate(-3em, 0);
+  }
+}

@@ -1,0 +1,93 @@
+@font-face {
+  font-family: "lato";
+  src: url(/data/lato.ttf) format("truetype");
+}
+* {
+  --radius-tab-1100: .6em .6em 0 0;
+  --radius-panel-0011: 0 0 .6em .6em;
+  --radius-button-1111: .4em .4em .4em .4em;
+  --gap-medium: 0.9em;
+  --gap-small: 0.6em;
+  --gap-tiny: 0.3em;
+  --thin-border: 1px solid rgba(255,255,255,0.5);
+  --thin-glass-border: 1px solid rgba(255,255,255,0.5);
+  --thin-white-shadow: inset 0em -1px rgba(255,255,255,0.5);
+  --glass-gradient: linear-gradient(
+    to bottom, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0)
+  );
+  --white-highlight: 
+    inset 1.0px 1.0px 1.0px rgba(255, 255, 255, .75);
+  --menu-font-size: 0.75em;
+  --panel-font-size: 0.75em;
+  --light-main-color: rgb(255, 247, 222);
+  --light-focus-color: rgb(255, 250, 240);
+  --dark-focus-shadow: rgb(22, 16, 0) 0 0 4px;
+  --main-color-glass: rgba(40, 40, 140, 0.4);
+  --dark-main-glass: rgba(16, 16, 101, 0.4);
+  --dark-accept-glass: rgba(0, 82, 68, 0.4);
+  --white-glass: rgba(200,200,255, 0.1);
+  --gray-glass: rgba(64,64,64, 0.4);
+  --glass-filter: blur(32px);
+}
+.root {
+  font-family: "lato",sans-serif;
+  color: var(--light-main-color);
+}
+.actionable {
+  cursor: pointer;
+}
+.tab {
+  box-shadow: var(--thin-white-shadow);
+}
+.button, .tab {
+  border-top: var(--thin-glass-border);
+  border-right: var(--thin-glass-border);
+}
+.button {
+  border-radius: var(--radius-button-1111);
+  border-bottom: var(--thin-glass-border);
+  border-left: var(--thin-glass-border);
+  padding-bottom: var(--gap-small);
+  padding-top: var(--gap-small);
+}
+.tab {
+  border-radius: var(--radius-tab-1100);
+  padding-bottom: var(--gap-medium);
+  padding-top: var(--gap-medium);
+}
+.grid {
+  display: grid;
+}
+.menu.grid {
+  grid-auto-flow: column;
+}
+.start.grid {
+  align-items: start;
+}
+.center.grid {
+  align-items: center;
+  justify-items: center;
+}
+.stretch.grid {
+  align-items: stretch;
+  justify-items: stretch;
+}
+.root.grid {
+  top: 0;
+  overflow: hidden;
+  max-height: 100dvh;
+  position: absolute;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: 100dvh auto;
+  & > .grid {
+    grid-column: 1;
+    grid-row: 1;
+  }
+  & img {
+    grid-column: 1 / -1;
+    grid-row: 1 / -1;
+  }
+}
+.indent {
+  padding-left: 1em;
+}

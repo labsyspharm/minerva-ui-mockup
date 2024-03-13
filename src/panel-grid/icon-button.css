@@ -1,0 +1,22 @@
+:host {
+  background-color: var(--dark-accept-glass);
+  border: var(--thin-glass-border);
+  margin-top: var(--gap-medium);
+  padding: var(--gap-tiny);
+  border-radius: 50%;
+  align-self: center;
+  justify-self: end;
+  simple-icon-lite {
+    transition: transform 0.25s ease 0s;
+    transform: scaleX(-1) rotate(90deg);
+  }
+  transition: all 0.25s ease 0s;
+  transform: translate(3em, .3em);
+}
+:host([expanded='true']) {
+  background-color: var(--dark-main-glass);
+  simple-icon-lite {
+    transform: scaleX(1) rotate(90deg);
+  }
+  transform: translate(0, .3em);
+}
