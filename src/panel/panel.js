@@ -92,15 +92,15 @@ class Panel extends HTMLElement {
     const { nav_config } = this.elementState;
     return {
       heading: () => {
-        const { tab_choice } = this.elementState;
-        if (tab_choice == 'STORY') {
+        const { tab } = this.elementState;
+        if (tab == 'STORY') {
           return '_______';
         }
-        return nav_config.get(tab_choice).heading
+        return nav_config.get(tab).heading
       },
       content: () => {
-        const { tab_choice } = this.elementState;
-        if (tab_choice == 'STORY') {
+        const { tab } = this.elementState;
+        if (tab == 'STORY') {
           return toElement(story_panel)``({});
         }
         return toElement(default_panel)``({});

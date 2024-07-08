@@ -1,35 +1,41 @@
-.grid.wrapper {
-  gap: var(--gap-tiny);
+:host {
   font-size: var(--menu-font-size);
-  & > div.grid {
+  > div > .grid:first-child {
+    grid-row: 1;
+    grid-column: 1;
+    padding-top: var(--gap-small);
+    padding-bottom: var(--gap-small);
     grid-template-columns: repeat(auto-fill, 100px);
   }
-  & > div.grid.tabs {
+  > div > .grid.tabs {
+    grid-row: 2;
+    grid-column: 1;
     grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
   }
-  & > div.grid > div.grid {
+  > div > .grid > .grid {
     grid-template-columns: auto 1fr auto;
   }
-  & > div.grid > div.grid > div {
+  > div > .grid > .grid > button {
     background-color: var(--dark-main-glass);
+    color: inherit;
   }
-  & > div.grid > div.grid.chosen > div {
+  > div > .grid > .grid[chosen="true"] > button {
     color: var(--light-focus-color);
     box-shadow: var(--white-highlight);
     text-shadow: var(--dark-focus-shadow);
-    background-color: var(--main-color-glass);
+    background-color: var(--gray-glass);
   }
-  & > div.grid.tabs > div.grid::before,
-  & > div.grid.tabs > div.grid::after {
+  > div > .grid.tabs > .grid::before,
+  > div > .grid.tabs > .grid::after {
     box-shadow: var(--thin-white-shadow);
   }
-  & > div.grid > div.grid::before,
-  & > div.grid > div.grid::after {
+  > div > .grid > .grid::before,
+  > div > .grid > .grid::after {
     width: var(--gap-tiny);
     content: '';
   }
-  & > div.grid > div.grid:first-child::before,
-  & > div.grid > div.grid:last-child::after {
+  > div > .grid > .grid:first-child::before,
+  > div > .grid > .grid:last-child::after {
     width: 0;
   }
 }

@@ -112,6 +112,9 @@ function defineElement(element, options={}) {
           addStyles.call(this, globalStyleSheet)
         );
       }
+      else if (this.shadowRoot) {
+        addStyles.call(this, globalStyleSheet);
+      }
     }
     get defineElement() {
       return defineElement.bind({

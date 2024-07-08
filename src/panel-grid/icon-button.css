@@ -1,22 +1,27 @@
 :host {
-  background-color: var(--dark-accept-glass);
-  border: var(--thin-glass-border);
-  margin-top: var(--gap-medium);
-  padding: var(--gap-tiny);
-  border-radius: 50%;
-  align-self: center;
+  align-items: start;
+  align-self: start;
   justify-self: end;
-  simple-icon-lite {
-    transition: transform 0.25s ease 0s;
+  cursor: pointer;
+  button {
+    background-color: var(--dark-accept-color);
     transform: scaleX(-1) rotate(90deg);
+    border: var(--thin-glass-border);
+    padding: var(--gap-tiny);
+    border-radius: 50%;
+    height: unset;
   }
-  transition: all 0.25s ease 0s;
   transform: translate(3em, .3em);
 }
 :host([expanded='true']) {
-  background-color: var(--dark-main-glass);
-  simple-icon-lite {
+  button {
+    background-color: var(--dark-main-glass);
     transform: scaleX(1) rotate(90deg);
   }
   transform: translate(0, .3em);
+}
+:host([close='true']) {
+  button {
+    background-color: var(--dark-reject-color);
+  }
 }

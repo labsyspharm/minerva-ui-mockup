@@ -5,13 +5,13 @@ class Nav extends HTMLElement {
 
   get elementTemplate() {
     const {
-      nav_config, menu_order, tab_order
+      menu_order, tab_order,
     } = this.elementState;
     const menu_items = this.itemsTemplate(
-      nav_config, menu_order, 'small button'
+      menu_order, 'button'
     );
     const tab_items = this.itemsTemplate(
-      nav_config, tab_order, 'tab'
+      tab_order, 'tab'
     );
     return toElement('div')`
       <div class="stretch grid menu">
@@ -21,29 +21,31 @@ class Nav extends HTMLElement {
         ${() => tab_items}
       </div>
     `({
-      'class': 'actionable stretch grid wrapper'
+      'class': 'contents'
     });
   }
-  itemsTemplate(item_map, item_list, kind) {
+  itemsTemplate(item_list, role) {
+    const { nav_config } = this.elementState;
     return item_list.map((item_id, i) => {
-      const item = item_map.get(item_id);
+      const item = nav_config.get(item_id);
       const item_class = () => {
-        return `center grid menu ${kind}`;
+        return `center grid menu ${role}`;
       }
       return toElement('div')`
-      <div class="${item_class}">
-        <div>
-          ${() => item.heading}
-        </div>
-      </div>`({
-        'class': () => {
-          const { tab_choice } = this.elementState;
-          return `stretch grid menu ${
-            item_id == tab_choice ? 'chosen' : ''
-          }`;
+      <button class="${item_class}" role="${role}">
+        <span>${() => item.heading}</span>
+      </button>`({
+        'class': 'stretch grid menu',
+        'chosen': () => {
+          const { tab, dialog } = this.elementState;
+          return [tab, dialog].includes(item.id);
         },
         '@click': () => {
-          this.elementState.tab_choice = item.id;
+          if (role == 'button') {
+            this.elementState.dialog = item.id;
+            return;
+          }
+          this.elementState.tab = item.id;
         },
       });
     })

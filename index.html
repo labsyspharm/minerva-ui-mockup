@@ -23,6 +23,10 @@
       "icon-button-css": "./src/panel-grid/icon-button.css",
       "panel-css": "./src/panel/panel.css",
       "collapse-css": "./src/panel/collapse.css",
+      "dialog-grid-css": "./src/panel-grid/dialog-grid.css",
+      "dialog-css": "./src/dialog/dialog.css",
+      "form-css": "./src/form/form.css",
+      "field-css": "./src/field/field.css",
       "nav-css": "./src/nav/nav.css",
       "elements": "./src/lib/elements.js",
       "element-state": "./src/lib/element-state.js",
@@ -30,28 +34,45 @@
       "nav-config": "./src/config/nav-config.js",
       "index": "./src/index.js",
       "nav": "./src/nav/nav.js",
+      "form": "./src/form/form.js",
+      "field": "./src/field/field.js",
+      "dialog": "./src/dialog/dialog.js",
       "panel": "./src/panel/panel.js",
       "panel-grid": "./src/panel-grid/panel-grid.js",
+      "@vaadin/text-field": "https://cdn.jsdelivr.net/npm/@vaadin/text-field@24.4.2/vaadin-text-field.js",
+      "@vaadin/form-layout": "https://cdn.jsdelivr.net/npm/@vaadin/form-layout@24.4.2/src/vaadin-form-layout.js",
       "@arrow-js/core": "https://cdn.jsdelivr.net/npm/@arrow-js/core@1.0.0-alpha.9/dist/index.mjs",
-      "a11y-collapse": "https://cdn.jsdelivr.net/npm/@lrnwebcomponents/a11y-collapse@8.0.2/src/a11y-collapse.js",
-       "@lit/reactive-element": "https://ga.jspm.io/npm:@lit/reactive-element@2.0.4/development/reactive-element.js",
-      "simple-icon-button-lite": "https://cdn.jsdelivr.net/npm/@lrnwebcomponents/simple-icon@8.0.2/lib/simple-icon-button-lite.js"
+      "@lit/reactive-element": "https://cdn.jsdelivr.net/npm/@lit/reactive-element@2.0.4/development/reactive-element.js",
+      "a11y-collapse": "https://cdn.jsdelivr.net/npm/@haxtheweb/a11y-collapse@9.0.0-alpha.0/a11y-collapse.js",
+      "simple-icon-button-lite": "https://cdn.jsdelivr.net/npm/@haxtheweb/simple-icon@9.0.0-alpha.0/lib/simple-icon-button-lite.js",
+      "web-dialog": "https://cdn.jsdelivr.net/npm/web-dialog@0.0.11/index.js"
     },
     "scopes": {
       "https://cdn.jsdelivr.net/": {
-        "@lrnwebcomponents/simple-icon/lib/simple-iconset.js": "https://cdn.jsdelivr.net/npm/@lrnwebcomponents/simple-icon@8.0.2/lib/simple-iconset.js",
-        "@lrnwebcomponents/simple-icon/lib/simple-icon-lite.js": "https://cdn.jsdelivr.net/npm/@lrnwebcomponents/simple-icon@8.0.2/lib/simple-icon-lite.js",
-        "@lrnwebcomponents/simple-icon/lib/simple-icon-button-lite.js": "https://cdn.jsdelivr.net/npm/@lrnwebcomponents/simple-icon@8.0.2/lib/simple-icon-button-lite.js",
-        "@lrnwebcomponents/simple-icon/lib/simple-icons.js": "https://cdn.jsdelivr.net/npm/@lrnwebcomponents/simple-icon@8.0.2/lib/simple-icons.js",
+        "@vaadin/field-base/src/": "https://cdn.jsdelivr.net/npm/@vaadin/field-base@24.4.2/src/",
+        "@vaadin/input-container/": "https://cdn.jsdelivr.net/npm/@vaadin/input-container@24.4.2/",
+        "@vaadin/vaadin-themable-mixin/": "https://cdn.jsdelivr.net/npm/@vaadin/vaadin-themable-mixin@24.4.2/",
+        "@vaadin/vaadin-lumo-styles/": "https://cdn.jsdelivr.net/npm/@vaadin/vaadin-lumo-styles@24.4.2/",
+        "@vaadin/component-base/src/": "https://cdn.jsdelivr.net/npm/@vaadin/component-base@24.4.2/src/",
+        "@vaadin/vaadin-usage-statistics/vaadin-usage-statistics.js": "https://cdn.jsdelivr.net/npm/@vaadin/vaadin-usage-statistics@2.1.2/vaadin-usage-statistics.js",
+        "@vaadin/vaadin-development-mode-detector/vaadin-development-mode-detector.js": "https://cdn.jsdelivr.net/npm/@vaadin/vaadin-development-mode-detector@2.0.7/vaadin-development-mode-detector.js",
+        "@vaadin/a11y-base/src/": "https://cdn.jsdelivr.net/npm/@vaadin/a11y-base@24.4.2/src/",
+        "@polymer/polymer/": "https://cdn.jsdelivr.net/npm/@polymer/polymer@3.5.1/",
+        "@polymer/polymer": "https://cdn.jsdelivr.net/npm/@polymer/polymer@3.5.1/polymer-element.js",
+        "@a11y/focus-trap": "https://ga.jspm.io/npm:@a11y/focus-trap@1.0.5/index.js",
+        "@haxtheweb/d-d-d/d-d-d.js": "https://cdn.jsdelivr.net/npm/@haxtheweb/d-d-d@9.0.0-alpha.0/d-d-d.js",
+        "@haxtheweb/hax-iconset/lib/simple-hax-iconset.js": "https://cdn.jsdelivr.net/npm/@haxtheweb/hax-iconset@9.0.0-alpha.0/lib/simple-hax-iconset.js",
+        "@haxtheweb/simple-colors-shared-styles/simple-colors-shared-styles.js": "https://cdn.jsdelivr.net/npm/@haxtheweb/simple-colors-shared-styles@9.0.0-alpha.0/simple-colors-shared-styles.js",
+        "@haxtheweb/simple-colors/simple-colors.js": "https://cdn.jsdelivr.net/npm/@haxtheweb/simple-colors@9.0.0-alpha.0/simple-colors.js",
+        "@haxtheweb/simple-icon/lib/": "https://cdn.jsdelivr.net/npm/@haxtheweb/simple-icon@9.0.0-alpha.0/lib/",
+        "@haxtheweb/simple-tooltip/simple-tooltip.js": "https://cdn.jsdelivr.net/npm/@haxtheweb/simple-tooltip@9.0.0-alpha.0/simple-tooltip.js",
         "@lit/reactive-element": "https://cdn.jsdelivr.net/npm/@lit/reactive-element@2.0.4/development/reactive-element.js",
-        "@lrnwebcomponents/simple-tooltip/simple-tooltip.js": "https://cdn.jsdelivr.net/npm/@lrnwebcomponents/simple-tooltip@8.0.2/simple-tooltip.js",
         "lit": "https://cdn.jsdelivr.net/npm/lit@3.1.4/index.js",
         "lit-element/lit-element.js": "https://cdn.jsdelivr.net/npm/lit-element@4.0.6/development/lit-element.js",
         "lit-html": "https://cdn.jsdelivr.net/npm/lit-html@3.1.4/development/lit-html.js",
         "lit-html/is-server.js": "https://cdn.jsdelivr.net/npm/lit-html@3.1.4/development/is-server.js"
       },
-      "https://ga.jspm.io/": {
-      } 
+      "https://ga.jspm.io/": {} 
     }
   }
   </script>

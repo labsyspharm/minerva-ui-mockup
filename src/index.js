@@ -11,9 +11,9 @@ const main = async (customSuffix) => {
     defaults: {
       content_map: 'content_map',
       stories: [
-        { content: 'Story 1 content', summary: 'Story 1', expanded: true },
-        { content: 'Story 2 content', summary: 'Story 2', expanded: false },
-        { content: 'Story 3 content', summary: 'Story 3', expanded: true }
+        { content: 'Waypoint 1 content', summary: 'Waypoint 1', expanded: true },
+        { content: 'Waypoint 2 content', summary: 'Waypoint 2', expanded: false },
+        { content: 'Waypoint 3 content', summary: 'Waypoint 3', expanded: true }
       ]
     },
     constants: {
@@ -30,13 +30,12 @@ const main = async (customSuffix) => {
   const panel_grid = defineElement(PanelGrid, {
     attributes: ['expanded'],
     defaults: {
-      tab_choice: 'STORY',
-      expanded: true
+      dialog: '', tab: 'STORY', expanded: true
     }
   });
   toElement('div')`
     <img src="data/background.png"/>
-    <${panel_grid} class="stretch grid" />
+    <${panel_grid} class="stretch grid panel outer" />
   `({
     class: 'root stretch grid'
   })(document.body);
