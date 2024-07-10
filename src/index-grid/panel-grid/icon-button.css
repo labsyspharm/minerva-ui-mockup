@@ -1,7 +1,5 @@
 :host {
   align-items: start;
-  align-self: start;
-  justify-self: end;
   cursor: pointer;
   button {
     background-color: var(--dark-accept-color);
@@ -11,14 +9,12 @@
     border-radius: 50%;
     height: unset;
   }
-  transform: translate(3em, .3em);
 }
 :host([expanded='true']) {
   button {
     background-color: var(--dark-main-glass);
     transform: scaleX(1) rotate(90deg);
   }
-  transform: translate(0, .3em);
 }
 :host([close='true']) {
   button {

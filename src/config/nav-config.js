@@ -3,21 +3,21 @@ const configure = (id) => {
     case 'EXPORT':
       return { 
         id, heading: 'Export',
-        submit: 'Export',
+        submit: 'Export', notice: 'Exported Story',
         success: 'Exported Minerva Story',
         dialog: 'Export as Minerva Story',
         fields: [{
-          label: 'Path of exported story'
+          label: 'Path for the exported story'
         }]
       }
     case 'SAVEAS':
       return { 
         id, heading: 'Save As',
-        submit: 'Save as a copy',
+        submit: 'Save as a copy', notice: 'Saved copy',
         success: 'Saved copy successfully',
         dialog: 'Save as an editable copy',
         fields: [{
-          label: 'Path of new copy',
+          label: 'Path for the new copy',
           placeholder: '/'
         }]
       }
@@ -25,7 +25,7 @@ const configure = (id) => {
       return { 
         id, heading: 'Save', notice: 'Saved',
         success: 'Saved successfully',
-        timeout: 1000
+        timeout: 3000
       }
     case 'STORY':
       return { id, heading: 'Story' }

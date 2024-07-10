@@ -19,8 +19,14 @@
       grid-row: 2 / 4;
       height: 100%;
     }
-    .icon {
+    > .icon {
       grid-row: 1;
+      align-self: start;
+      justify-self: end;
+      transform: translate(3em, .3em);
+    }
+    > .icon[expanded='true'] {
+      transform: translate(0, .3em);
     }
   }
 }

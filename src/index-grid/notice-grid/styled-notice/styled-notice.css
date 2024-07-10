@@ -1,6 +1,8 @@
 :host {
+  --dialog-animation-duration: 0.3s;
   --dialog-border-radius: var(--radius-notice-1111);
   --dialog-bg: var(--dark-main-glass);
+  --dialog-padding: var(--gap-medium);
   --dialog-container-padding: 0;
   --dialog-width: auto;
   #backdrop {

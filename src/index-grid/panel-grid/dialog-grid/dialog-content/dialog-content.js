@@ -10,16 +10,12 @@ class DialogContent extends HTMLElement {
   }
 
   get elementTemplate() {
-    const form = this.defineElement(Form);
-    const field = this.defineElement(Field);
-    return toElement(form)`
-      ${() => this.fieldTemplate}
-    `(
-      {}
-    );
+    return toElement('div')`
+      ${() => this.formTemplate}
+    `({});
   }
 
-  get fieldTemplate() {
+  get formTemplate() {
     const form = this.defineElement(Form);
     const field = this.defineElement(Field);
     const { nav_config, dialog } = this.elementState;
@@ -32,9 +28,23 @@ class DialogContent extends HTMLElement {
         label: x.label, value: x.placeholder || ''
       })
     })
-    return toElement(form)`${() => fields}`(
-      {}
-    );
+    const submit = toElement('input')``({
+      value: () => config.submit,
+      '@click': () => {
+        this.elementState.dialog = '';
+        if (config.notice) {
+          this.elementState.notice = config.id;
+        }
+      },
+      class: 'button',
+      type: 'submit'
+    })
+    return toElement(form)`
+      ${() => fields}
+      <div class='start left grid'>
+        ${() => submit}
+      </div>
+    `({});
   }
 }
 

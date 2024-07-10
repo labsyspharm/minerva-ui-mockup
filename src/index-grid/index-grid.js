@@ -10,6 +10,7 @@ class IndexGrid extends HTMLElement {
 
   get elementTemplate() {
     const notice_grid = this.defineElement(NoticeGrid, {
+      attributes: ['open']
     });
     const panel_grid = this.defineElement(PanelGrid, {
       attributes: ['expanded'],

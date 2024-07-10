@@ -1,16 +1,9 @@
 import panelGridCSS from 'panel-grid-css' assert { type: 'css' };
-import iconButtonCSS from 'icon-button-css' assert { type: 'css' };
-import { SimpleIconButtonLite } from 'simple-icon-button-lite';
 import { PanelContent } from 'panel-content';
 import { DialogGrid } from 'dialog-grid';
+import { IconButton } from 'icon-button';
 import { toElement } from 'elements';
 import { Nav } from 'nav';
-
-class IconButton extends SimpleIconButtonLite {
-  static get _styleSheet() {
-    return iconButtonCSS;
-  }
-}
 
 class PanelGrid extends HTMLElement {
 

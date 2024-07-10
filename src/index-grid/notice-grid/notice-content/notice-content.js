@@ -1,6 +1,5 @@
 import noticeContentCSS from 'notice-content-css' assert { type: 'css' };
-import { Form } from 'form';
-import { Field } from 'field';
+import { IconButton } from 'icon-button';
 import { toElement } from 'elements';
 
 class NoticeContent extends HTMLElement {
@@ -10,31 +9,36 @@ class NoticeContent extends HTMLElement {
   }
 
   get elementTemplate() {
-    const form = this.defineElement(Form);
-    const field = this.defineElement(Field);
-    return toElement(form)`
-      ${() => this.fieldTemplate}
-    `(
-      {}
-    );
+    return toElement('div')`
+      ${() => this.elementTemplateContent}
+    `({});
   }
 
-  get fieldTemplate() {
-    const form = this.defineElement(Form);
-    const field = this.defineElement(Field);
+  get elementTemplateContent() {
+    const button = this.defineElement(IconButton);
     const { nav_config, notice } = this.elementState;
     const config = nav_config.get(notice) || {};
-    if (!('fields' in config)) {
+    if (!config.notice) {
       return '';
     }
-    const fields = config.fields.map((x) => {
-      return toElement(field)``({
-        label: x.label, value: x.placeholder || ''
-      })
+    return toElement('div')`
+      <h2>${() => config.notice}</h2>
+      ${this.iconTemplate} 
+      <p>${() => config.success}</p>
+    `({
+       class: 'grid'
+     });
+  }
+
+  get iconTemplate() {
+    const button = this.defineElement(IconButton);
+    return toElement(button)``({
+      icon: 'icons:close',
+      class: 'icon', close: true,
+      '@click': (event) => {
+        this.elementState.notice = '';
+      }
     })
-    return toElement(form)`${() => fields}`(
-      {}
-    );
   }
 }
 
