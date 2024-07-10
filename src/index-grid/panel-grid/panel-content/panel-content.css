@@ -1,4 +1,5 @@
 .wrapper.grid {
+  overflow: scroll;
   font-size: var(--panel-font-size);
   grid-template-rows: auto 1fr;
   padding: var(--gap-tiny);

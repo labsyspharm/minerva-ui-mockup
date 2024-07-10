@@ -1,4 +1,4 @@
-import panelCSS from 'panel-css' assert { type: 'css' };
+import panelContentCSS from 'panel-content-css' assert { type: 'css' };
 import collapseCSS from 'collapse-css' assert { type: 'css' };
 import { toElement } from 'elements';
 import {A11yCollapse} from 'a11y-collapse';
@@ -25,7 +25,10 @@ class Collapse extends A11yCollapse {
   }
 }
 
-class PanelContent extends HTMLElement {
+class Panel extends HTMLElement {
+  static get _styleSheet() {
+    return panelContentCSS;
+  }
   get elementTemplate() {
     const { items } = this.elementContents;
     const { itemsTemplate } = this.elementContents;
@@ -57,24 +60,22 @@ class PanelContent extends HTMLElement {
     }
     return { itemsTemplate };
   }
-  static get _styleSheet() {
-    return panelCSS;
-  }
 }
 
-class StoryPanelContent extends PanelContent {
+class StoryPanel extends Panel {
   get elementContents() {
     const { stories } = this.elementState;
     return {
       ...super.elementContents, items: stories 
     };
   }
-  static get _styleSheet() {
-    return panelCSS;
-  }
 }
 
-class Panel extends HTMLElement {
+class PanelContent extends HTMLElement {
+
+  static get _styleSheet() {
+    return panelContentCSS;
+  }
 
   get elementTemplate() {
     const { heading, content } = this.elementContents;
@@ -87,8 +88,8 @@ class Panel extends HTMLElement {
   }
 
   get elementContents() {
-    const default_panel = this.defineElement(PanelContent);
-    const story_panel = this.defineElement(StoryPanelContent);
+    const default_panel = this.defineElement(Panel);
+    const story_panel = this.defineElement(StoryPanel);
     const { nav_config } = this.elementState;
     return {
       heading: () => {
@@ -107,10 +108,6 @@ class Panel extends HTMLElement {
       }
     }
   }
-
-  static get _styleSheet() {
-    return panelCSS;
-  }
 }
 
-export { Panel };
+export { PanelContent };

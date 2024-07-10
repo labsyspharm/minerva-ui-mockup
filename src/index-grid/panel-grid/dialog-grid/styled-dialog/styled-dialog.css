@@ -24,4 +24,5 @@
   grid-template-rows: 1fr;
   position: static;
   padding: 0;
+  height: 100%;
 }

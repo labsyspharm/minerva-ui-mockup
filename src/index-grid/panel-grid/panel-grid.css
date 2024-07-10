@@ -11,6 +11,7 @@
     }
     .inner.grid {
       grid-row: 3;
+      background-color: var(--gray-glass);
       align-self: stretch;
       border-top: none;
     }
@@ -20,6 +21,15 @@
     }
     .icon {
       grid-row: 1;
+    }
+  }
+}
+
+:host([expanded='true']) {
+  .wrapper {
+    overflow: hidden;
+    .inner.grid {
+      overflow: hidden;
     }
   }
 }

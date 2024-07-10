@@ -1,7 +1,7 @@
 import globalCSS from 'global-css' assert { type: 'css' };
 import { toElement, toElementState } from 'elements';
+import { IndexGrid } from 'index-grid';
 import { nav_config } from 'nav-config';
-import { PanelGrid } from 'panel-grid';
 
 const main = async (customSuffix) => {
   document.adoptedStyleSheets = [
@@ -17,9 +17,9 @@ const main = async (customSuffix) => {
       ]
     },
     constants: {
-      nav_config: new Map(nav_config),
+      nav_config,
       tab_order: (
-        [ 'IMAGE', 'GROUP', 'OVERLAY', 'STORY' ]
+        [ 'IMAGE', 'OVERLAY', 'GROUP', 'STORY' ]
       ),
       menu_order: (
         [ 'EXPORT', 'SAVEAS', 'SAVE' ]
@@ -27,17 +27,13 @@ const main = async (customSuffix) => {
     },
     styleSheet: globalCSS
   });
-  const panel_grid = defineElement(PanelGrid, {
-    attributes: ['expanded'],
+  const index = defineElement(IndexGrid, {
     defaults: {
-      dialog: '', tab: 'STORY', expanded: true
+      notice: '', dialog: '', tab: 'STORY'
     }
   });
-  toElement('div')`
-    <img src="data/background.png"/>
-    <${panel_grid} class="stretch grid panel outer" />
-  `({
-    class: 'root stretch grid'
+  toElement(index)``({
+    class: 'contents'
   })(document.body);
 }
 

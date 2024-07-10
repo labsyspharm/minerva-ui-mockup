@@ -41,11 +41,16 @@ class Nav extends HTMLElement {
           return [tab, dialog].includes(item.id);
         },
         '@click': () => {
-          if (role == 'button') {
+          const { nav_config } = this.elementState;
+          if ('dialog' in nav_config.get(item.id)) {
             this.elementState.dialog = item.id;
-            return;
           }
-          this.elementState.tab = item.id;
+          else if (role == 'tab') {
+            this.elementState.tab = item.id;
+          }
+          else {
+            this.elementState.notice = item.id;
+          }
         },
       });
     })
