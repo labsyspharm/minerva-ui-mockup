@@ -6,6 +6,7 @@
     grid-template-rows: auto auto 1fr;
     grid-template-columns: 1fr;
     pointer-events: all;
+    overflow: scroll;
     * {
       grid-column: 1;
     }

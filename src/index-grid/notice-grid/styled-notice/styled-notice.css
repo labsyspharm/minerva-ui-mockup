@@ -1,5 +1,5 @@
 :host {
-  --dialog-animation-duration: 0.3s;
+  --dialog-animation-duration: 0.2s;
   --dialog-border-radius: var(--radius-notice-1111);
   --dialog-bg: var(--dark-main-glass);
   --dialog-padding: var(--gap-medium);

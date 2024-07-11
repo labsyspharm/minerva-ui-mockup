@@ -2,6 +2,7 @@ import globalCSS from 'global-css' assert { type: 'css' };
 import { toElement, toElementState } from 'elements';
 import { IndexGrid } from 'index-grid';
 import { nav_config } from 'nav-config';
+import { metadata_config } from 'metadata-config';
 
 const main = async (customSuffix) => {
   document.adoptedStyleSheets = [
@@ -10,11 +11,7 @@ const main = async (customSuffix) => {
   const defineElement = toElementState(customSuffix, {
     defaults: {
       content_map: 'content_map',
-      stories: [
-        { content: 'Waypoint 1 content', summary: 'Waypoint 1', expanded: true },
-        { content: 'Waypoint 2 content', summary: 'Waypoint 2', expanded: false },
-        { content: 'Waypoint 3 content', summary: 'Waypoint 3', expanded: true }
-      ]
+      metadata_config
     },
     constants: {
       nav_config,

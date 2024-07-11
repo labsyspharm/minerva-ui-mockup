@@ -41,9 +41,12 @@ class Panel extends HTMLElement {
         defaults: { ki: 0 }
       });
       return items.map((item, i) => {
+        const paragraphs = item.content.map(text => {
+          return toElement('p')`${() => text}`({});
+        })
         return toElement(details)`
           <p slot="heading">${() => item.summary}</p>
-          <div>${() => item.content}</div>
+          <div>${() => paragraphs}</div>
         `({
           accordion: true, ki: i,
           expanded: () => {
@@ -64,7 +67,7 @@ class Panel extends HTMLElement {
 
 class StoryPanel extends Panel {
   get elementContents() {
-    const { stories } = this.elementState;
+    const { stories } = this.elementState.metadata_config;
     return {
       ...super.elementContents, items: stories 
     };
@@ -95,7 +98,8 @@ class PanelContent extends HTMLElement {
       heading: () => {
         const { tab } = this.elementState;
         if (tab == 'STORY') {
-          return '_______';
+          const { metadata_config } = this.elementState;
+          return metadata_config['name'];
         }
         return nav_config.get(tab).heading
       },
