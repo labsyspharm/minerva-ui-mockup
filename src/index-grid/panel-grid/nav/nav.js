@@ -1,5 +1,5 @@
-import navCSS from 'nav-css' assert { type: 'css' };
-import { toElement } from 'elements';
+import navCSS from '#nav-css' assert { type: 'css' };
+import { toElement } from '#elements';
 
 class Nav extends HTMLElement {
 

@@ -1,6 +1,6 @@
-import noticeContentCSS from 'notice-content-css' assert { type: 'css' };
-import { IconButton } from 'icon-button';
-import { toElement } from 'elements';
+import noticeContentCSS from '#notice-content-css' assert { type: 'css' };
+import { IconButton } from '#icon-button';
+import { toElement } from '#elements';
 
 class NoticeContent extends HTMLElement {
 

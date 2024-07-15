@@ -1,7 +1,7 @@
-import dialogContentCSS from 'dialog-content-css' assert { type: 'css' };
-import { Form } from 'form';
-import { Field } from 'field';
-import { toElement } from 'elements';
+import dialogContentCSS from '#dialog-content-css' assert { type: 'css' };
+import { Form } from '#form';
+import { Field } from '#field';
+import { toElement } from '#elements';
 
 class DialogContent extends HTMLElement {
 

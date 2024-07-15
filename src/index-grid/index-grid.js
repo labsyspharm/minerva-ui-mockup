@@ -1,7 +1,7 @@
-import indexGridCSS from 'index-grid-css' assert { type: 'css' };
-import { toElement } from 'elements';
-import { PanelGrid } from 'panel-grid';
-import { NoticeGrid } from 'notice-grid';
+import indexGridCSS from '#index-grid-css' assert { type: 'css' };
+import { toElement } from '#elements';
+import { PanelGrid } from '#panel-grid';
+import { NoticeGrid } from '#notice-grid';
 
 class IndexGrid extends HTMLElement {
   static get _styleSheet() {

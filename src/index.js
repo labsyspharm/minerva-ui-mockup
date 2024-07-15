@@ -1,8 +1,8 @@
-import globalCSS from 'global-css' assert { type: 'css' };
-import { toElement, toElementState } from 'elements';
-import { IndexGrid } from 'index-grid';
-import { nav_config } from 'nav-config';
-import { metadata_config } from 'metadata-config';
+import globalCSS from '#global-css' assert { type: 'css' };
+import { toElement, toElementState } from '#elements';
+import { IndexGrid } from '#index-grid';
+import { nav_config } from '#nav-config';
+import { metadata_config } from '#metadata-config';
 
 const main = async (customSuffix) => {
   document.adoptedStyleSheets = [

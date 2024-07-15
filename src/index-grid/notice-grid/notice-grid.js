@@ -1,6 +1,6 @@
-import { toElement } from 'elements';
-import { StyledNotice } from 'styled-notice';
-import { NoticeContent } from 'notice-content';
+import { toElement } from '#elements';
+import { StyledNotice } from '#styled-notice';
+import { NoticeContent } from '#notice-content';
 
 class NoticeGrid extends HTMLElement {
 

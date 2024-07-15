@@ -1,7 +1,7 @@
-import panelContentCSS from 'panel-content-css' assert { type: 'css' };
-import collapseCSS from 'collapse-css' assert { type: 'css' };
-import { toElement } from 'elements';
-import {A11yCollapse} from 'a11y-collapse';
+import panelContentCSS from '#panel-content-css' assert { type: 'css' };
+import collapseCSS from '#collapse-css' assert { type: 'css' };
+import { A11yCollapse } from '@haxtheweb/a11y-collapse';
+import { toElement } from '#elements';
 
 class Collapse extends A11yCollapse {
   static elementProperties = new Map([

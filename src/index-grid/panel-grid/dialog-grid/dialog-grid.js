@@ -1,6 +1,6 @@
-import { toElement } from 'elements';
-import { StyledDialog } from 'styled-dialog';
-import { DialogContent } from 'dialog-content';
+import { toElement } from '#elements';
+import { StyledDialog } from '#styled-dialog';
+import { DialogContent } from '#dialog-content';
 
 class DialogGrid extends HTMLElement {
 

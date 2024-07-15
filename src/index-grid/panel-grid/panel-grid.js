@@ -1,9 +1,9 @@
-import panelGridCSS from 'panel-grid-css' assert { type: 'css' };
-import { PanelContent } from 'panel-content';
-import { DialogGrid } from 'dialog-grid';
-import { IconButton } from 'icon-button';
-import { toElement } from 'elements';
-import { Nav } from 'nav';
+import panelGridCSS from '#panel-grid-css' assert { type: 'css' };
+import { PanelContent } from '#panel-content';
+import { DialogGrid } from '#dialog-grid';
+import { IconButton } from '#icon-button';
+import { toElement } from '#elements';
+import { Nav } from '#nav';
 
 class PanelGrid extends HTMLElement {
 
