@@ -1,6 +1,6 @@
 {
   "name": "minerva-author-ui",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "UI for Minerva Author 2.0",
   "main": "bundle.js",
   "type": "module",
