@@ -1,0 +1,5 @@
+{
+  "devDependencies": {
+    "rollup-plugin-import-meta-url-to-module": "^0.3.0"
+  }
+}
