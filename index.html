@@ -18,15 +18,14 @@
     <img slot="image" src="data/background.png"/>
   </author-minerva>
   <script type="module-shim">
-    import indexgrid from 'production-index';
-    // Define the UI component before loading image
-    indexgrid('minerva');
+    import { author } from 'author';
+    author('minerva');
   </script>
   <script async src="https://ga.jspm.io/npm:es-module-shims@1.7.2/dist/es-module-shims.js"></script>
   <script type="importmap-shim">
   {
     "imports": {
-      "production-index": "https://cdn.jsdelivr.net/npm/minerva-author-ui@2.0.0-beta.8/dist/bundle.js"
+      "author": "https://cdn.jsdelivr.net/npm/minerva-author-ui@2.0.0-beta.11/dist/assets/author.js"
     }
   }
   </script>
